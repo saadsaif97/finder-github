@@ -1,13 +1,13 @@
 import HeroArea from './components/layout/HeroArea'
 import Navbar from './components/layout/Navbar'
-import UserCard from './components/users/UserCard'
+import Users from './components/users/Users'
 
 function App() {
   return (
     <div className='container'>
       <Navbar />
       <HeroArea />
-      <UserCard />
+      <Users />
     </div>
   )
 }

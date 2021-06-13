@@ -59,7 +59,7 @@ class UserCard extends Component {
     let { data, repos } = this.state
 
     return (
-      <div>
+      <>
         <div className='card'>
           <img src={data.avatar_url} className='user-card-image' alt='...' />
           <a
@@ -79,7 +79,7 @@ class UserCard extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </>
     )
   }
 }
