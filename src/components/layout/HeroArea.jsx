@@ -6,6 +6,7 @@ const HeroArea = () => {
       <h1 className='display-4 text-center font-weight-bolder'>
         <i className='fab fa-github'></i> Github Finder
       </h1>
+      <p className='text-center'>search user and see the repositories</p>
     </div>
   )
 }

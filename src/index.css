@@ -76,8 +76,14 @@ a.user-card:hover {
 }
 
 .userGrid {
+  margin-top: 50px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   grid-gap: 10px;
   margin-bottom: 5px !important;
+}
+
+.searchForm {
+  width: 100%;
+  display: flex;
 }
