@@ -40,7 +40,7 @@ class Users extends Component {
   }
 
   searchUsers = async (q) => {
-    if (q == '') {
+    if (q === '') {
       return alert('Please fill any search query')
     }
 

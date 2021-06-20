@@ -52,7 +52,7 @@ class UserWithRepos extends Component {
               <small>Top 30 repos</small>
             </div>
             <div className='repos'>
-              {repos.length == 0 && <Spinner />}
+              {repos.length === 0 && <Spinner />}
               {repos.length > 0 &&
                 repos.map((repo, index) => <Repo {...repo} key={index} />)}
             </div>
