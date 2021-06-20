@@ -5,6 +5,17 @@ import Search from '../Search'
 import SearchQueryAndRemoveBtn from './SearchQueryAndRemoveBtn'
 import UserWithRepos from './UserWithRepos'
 
+let githubClientId;
+let githubClientSecret;
+
+if(process.env.NODE_ENV !== 'production') {
+  githubClientId = process.env.REACT_APP_GITHUB_CLIENT_ID;
+  githubClientSecret = process.env.REACT_APP_GITHUB_CLIENT_SECRET;
+} else {
+  githubClientId = process.env.GITHUB_CLIENT_ID;
+  githubClientSecret = process.env.GITHUB_CLIENT_SECRET;
+}
+
 class Users extends Component {
   state = {
     users: [],
@@ -20,7 +31,7 @@ class Users extends Component {
   fetchAndSetFreshUsers = async () => {
     this.setState({ loading: true })
     const res = await fetch(
-      `https://api.github.com/users?client_id=${process.env.REACT_APP_CLIENT_ID}&client_secret=${process.env.REACT_APP_CLIENT_SECRET}`
+      `https://api.github.com/users?client_id=${githubClientId}&client_secret=${githubClientSecret}`
     )
     this.setState({ loading: false })
     const data = await res.json()
@@ -36,7 +47,7 @@ class Users extends Component {
     this.setState({ loading: true })
     this.setState({ searchQuery: q })
     const res = await fetch(
-      `https://api.github.com/search/users?q=${q}&client_id=${process.env.REACT_APP_CLIENT_ID}&client_secret=${process.env.REACT_APP_CLIENT_SECRET}`
+      `https://api.github.com/search/users?q=${q}&client_id=${githubClientId}&client_secret=${githubClientSecret}`
     )
     const data = await res.json()
     this.setState({ loading: false })
